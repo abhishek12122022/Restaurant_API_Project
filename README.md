@@ -3,7 +3,7 @@
 ***********  API End Points  ***************
 
 http://127.0.0.1:8000/api/menu-items/
-     -> GET all menu items
+     -> GET all menu items/n
      -> POST a new user item
      
 http://127.0.0.1:8000/api/menu-items/<int: pk>
