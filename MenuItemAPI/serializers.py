@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import MenuItem, Category
 
+
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
@@ -15,10 +16,9 @@ class MenuItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MenuItem
-        fields = ['id', 'title', 'price', 'inventory', 'category']
+        fields = ['id', 'title', 'price', 'category']
         extra_kwargs = {
-            'price':{'min_value': 0},
-            'inventory':{'min_value': 2}
+            'price':{'min_value': 0}
         }
 
     def create(self, validated_data):

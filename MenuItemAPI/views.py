@@ -4,11 +4,19 @@ from .serializers import MenuItemSerializer
 from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.views import APIView
+from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
+from django.contrib.auth import authenticate
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
 
 class MenuItemList(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
     def get(self, request, format=None):
         items = MenuItem.objects.select_related('category').all()
         category_name = request.query_params.get('category')
@@ -50,3 +58,12 @@ class MenuItemDetail(APIView):
         item = get_object_or_404(MenuItem, pk=pk)
         item.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
+
+
+        
+
+
+
