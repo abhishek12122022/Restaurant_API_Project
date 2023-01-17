@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/menu/', include('MenuItemAPI.urls')),
     path('api/users/', include('user.urls')),
+    path('api/groups/', include('groups.urls')),
 ]

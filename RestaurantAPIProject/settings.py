@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'MenuItemAPI',
     'user',
+    'groups',
     'rest_framework.authtoken',
 ]
 
