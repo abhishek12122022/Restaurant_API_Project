@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'MenuItemAPI',
     'user',
     'groups',
+    'cart',
+    'order',
     'rest_framework.authtoken',
 ]
 

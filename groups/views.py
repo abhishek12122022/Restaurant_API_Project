@@ -27,7 +27,7 @@ class ManagerView(APIView):
             manager_group = Group.objects.get(name='Manager')
             user = get_object_or_404(User, username=username)
             user.groups.add(manager_group)
-            return Response({'message': 'User successfully added to Manager group'}, status=status.HTTP_200_OK)
+            return Response({'message': 'User successfully added to Manager group'}, status=status.HTTP_201_CREATED)
         else:
             return Response({'message': 'You are not authorized'}, status=status.HTTP_403_FORBIDDEN)
 
@@ -49,7 +49,7 @@ class DeliveryCrewView(APIView):
             delivery_crew_group = Group.objects.get(name='Delivery Crew')
             user = get_object_or_404(User, username=username)
             user.groups.add(delivery_crew_group)
-            return Response({'message': 'User succssfully added to Delivery Crew group'}, status=status.HTTP_200_OK)
+            return Response({'message': 'User succssfully added to Delivery Crew group'}, status=status.HTTP_201_CREATED)
         else:
             return Response({'message': 'You are not authorized'}, status=status.HTTP_403_FORBIDDEN)
 
